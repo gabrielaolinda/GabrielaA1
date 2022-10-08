@@ -14,8 +14,16 @@ import br.tp1.gabriela.model.Funcionario;
 public class LoginController {
 	private Funcionario usuario;
 	private String senha;
+	private String login;
 	
-	
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
 	public String getSenha() {
 		return senha;
 	}
@@ -30,6 +38,8 @@ public class LoginController {
 	public void logar(){
 		System.out.println("===================");
 		System.out.println("tentativa de login ");
+		System.out.println("login:"+this.login);
+		System.out.println("senha:"+ this.senha);
 		System.out.println("===================");
 	}
 
