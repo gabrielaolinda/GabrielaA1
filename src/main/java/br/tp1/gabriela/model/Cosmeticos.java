@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 @Entity
 public class Cosmeticos {
 	@Id
@@ -13,21 +15,13 @@ public class Cosmeticos {
 	private Integer id;
 	private TipoCosmetico tipo;
 	private Double preco;
+	@ManyToOne
+	@JoinColumn(name = "id_marca")
 	private Marca marca;
 	private LocalDate dataRecebimento;
 	private Double quantidade;
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	public Integer getId() {
 		return id;
