@@ -6,8 +6,11 @@ import javax.faces.application.FacesMessage.Severity;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import br.tp1.gabriela.Repository.FuncionarioRepository;
 import br.tp1.gabriela.Repository.Repository;
+import br.tp1.gabriela.aplication.Util;
 import br.tp1.gabriela.model.Funcionario;
+import net.bytebuddy.asm.Advice.This;
 
 @Named
 @RequestScoped
@@ -36,11 +39,18 @@ public class LoginController {
 		return usuario;
 	}
 	public void logar(){
+		FuncionarioRepository repo = new FuncionarioRepository();
+		this.usuario = repo.logar(getLogin(),getSenha() );
 		System.out.println("===================");
 		System.out.println("tentativa de login ");
 		System.out.println("login:"+this.login);
 		System.out.println("senha:"+ this.senha);
+		
 		System.out.println("===================");
+		System.out.println("usuario:"+ this.usuario);
+		if(this.getUsuario() != null) {
+			Util.redirect("menu.xhtml?faces-redirect=true");
+		}
 	}
 
 	public void setUsuario(Funcionario usuario) {
