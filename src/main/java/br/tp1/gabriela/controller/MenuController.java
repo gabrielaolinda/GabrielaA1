@@ -13,9 +13,9 @@ public class MenuController {
 
 	}
 
-	public String telaCadastro() {
+	public String telaCosmetico() {
 
-		return "Cosmeticos.xhtml?faces-redirect=true";
+		return "cosmeticos.xhtml?faces-redirect=true";
 
 	}
 
