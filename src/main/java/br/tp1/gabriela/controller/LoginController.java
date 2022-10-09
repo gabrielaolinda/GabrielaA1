@@ -52,6 +52,11 @@ public class LoginController {
 			Util.redirect("menu.xhtml?faces-redirect=true");
 		}
 	}
+	public void limpar(){
+		setLogin(null);
+		setSenha(null);
+		
+	}
 
 	public void setUsuario(Funcionario usuario) {
 		this.usuario = usuario;

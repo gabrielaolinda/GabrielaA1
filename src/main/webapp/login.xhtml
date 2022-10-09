@@ -39,6 +39,12 @@
 						<h:commandButton value="Logar"
 							styleClass="btn btn-lg btn-block btn-login"
 							action="#{loginController.logar()}" />
+						<h:commandButton value="limpar"
+							styleClass="btn btn-lg btn-block btn-login"
+							action="#{loginController.limpar()}">
+						<f:ajax execute="@this" render="@form"/>
+					</h:commandButton>
+					
 					</div>
 				</h:form>
 			</div>
